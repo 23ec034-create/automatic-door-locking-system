@@ -2,14 +2,10 @@
 from machine import Pin, UART, PWM
 from time import sleep
 
-# Initialize UART for HC-05 Bluetooth module
 uart = UART(0, baudrate=9600, tx=Pin(0), rx=Pin(1))
-
-# Initialize PWM for servo control on GPIO16
 servoPin = PWM(Pin(16))
 servoPin.freq(50)
 
-# Initialize LED on GPIO15
 led = Pin(15, Pin.OUT)
 
 def set_servo_angle(angle):
